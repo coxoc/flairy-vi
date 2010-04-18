@@ -107,7 +107,7 @@ var vi_ft_reg;
 var viflags = '';
 var lastinsert = '';
 
-var spelling = false;
+var spelling = true;
 var spellcheck = new Object();
 var safewords = new Object();
 var brokenwords = new Object();
