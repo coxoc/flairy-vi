@@ -1,0 +1,24 @@
+{
+	faonVersion: "1.0",
+	owner: "http://coxoc.vo-id.org/",
+	target: "http://github.com/coxoc/flairy-vi/raw/master/public/",
+	top: "/index.html",
+	signature: "3a1652dfcd822fba34b964dd3c89c64490c22317f3a42ac06566266db9cfbf877edc3a8d9ddd9395790993a659974140ec97d2d6d4ff2a24e059ec9b14ca149a",
+	title: "flairy-vi",
+	version: "1.0.0",
+	description: "viライクなテキストエディタです。ワードプロセッサではないため、表現の修飾などを行うことはできません。",
+	icon: "/images/notepad.png",
+	icon_48: "/images/notepad_48x48.png",
+  catalog: "private",
+		
+	hints: {
+		window:{ 
+			maximizable: true,
+			minimizable: true,
+			resizable: true,
+			draggable: true,
+			width: 640,
+			height: 480
+		}
+	}
+}
