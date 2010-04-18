@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="stylesheets/vi.css" type="text/css" /> 
     <script type="text/javascript">
       window.app = new FlairyVi.Application();
+      editor(document.forms[0].elements.body);
     </script>
   </head> 
-  <body><form> 
-      <textarea name="body" onfocus="editor(this);">
-      </textarea>
-      <a href="" onclick="editor(document.forms[0].elements.body);return false;">launch vi</a>
+  <body>
+    <form> 
+      <textarea name="body"></textarea>
     </form> 
   </body> 
 </html> 
