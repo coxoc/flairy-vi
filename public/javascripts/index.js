@@ -1712,7 +1712,7 @@ function term_command(s) {
         break;
       }
     }
-    write_res('/'+file_name, zx);
+    write_res('/'+file_name, zx, function() {}, "text/plain");
 		statustext = '"/' + flie_name + '" ' + file.length + 'L, '
 				+ zx.length + 'C written';
 
