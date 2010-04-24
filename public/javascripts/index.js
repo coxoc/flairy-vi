@@ -1704,8 +1704,16 @@ function term_command(s) {
 		var zx = term_freeze();
 		if (term._formelement) term._formelement.value=zx;
     //Flairy APIで書き込み
-    write_res('/vi_text', zx);
-		statustext = '"/tmp/mess4XbCXM" ' + file.length + 'L, '
+    var arg = s.split(" ");
+    var file_name = "vi_text";
+    for (k = 1; k < arg.length; k++) {
+      if (arg[k] != "") {
+        file_name = arg[k];
+        break;
+      }
+    }
+    write_res('/'+file_name, zx);
+		statustext = '"/' + flie_name + '" ' + file.length + 'L, '
 				+ zx.length + 'C written';
 
 	} else if (!emacsen && s.substr(i,(s.length-i)) == 'emacs') {
