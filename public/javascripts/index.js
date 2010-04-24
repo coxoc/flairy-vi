@@ -1703,6 +1703,8 @@ function term_command(s) {
 	} else if (cmd == 'w') {
 		var zx = term_freeze();
 		if (term._formelement) term._formelement.value=zx;
+    //Flairy APIで書き込み
+    write_res('/vi_text', zx);
 		statustext = '"/tmp/mess4XbCXM" ' + file.length + 'L, '
 				+ zx.length + 'C written';
 
