@@ -1748,6 +1748,8 @@ function term_command(s) {
     read_res("/" + filename,
       function(data) {
         term_thaw(data);
+				statustext = filename + ' Opened!';
+        term_redraw();
       },
       function(resp) {
         var msg = Flairy.Res.Message[resp.status];
