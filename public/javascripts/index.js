@@ -38,7 +38,7 @@ var term_win_width;
 var term_win_height;
 var term_cur_width;
 
-// var tools;
+var tools;
 var suggest;
 var backing;
 
@@ -3548,9 +3548,9 @@ function _redraw_term() {
 		xh.send(undefined);
 	}
 	if (cursory == (h-1)) {
-// 		tools.style.display = 'none';
+ 		tools.style.display = 'none';
 	} else {
-// 		tools.style.display = 'block';
+ 		tools.style.display = 'block';
 	}
 	_update_backing();
 }
@@ -3607,7 +3607,7 @@ function editor_disable(sav) {
 	document.body.removeChild(suggest);
 	document.body.removeChild(term);
 	document.body.removeChild(printer);
-// 	document.body.removeChild(tools);
+ 	document.body.removeChild(tools);
 	document.body.removeChild(cursor);
 
 	var z;
@@ -3658,7 +3658,7 @@ function editor(t) {
 		printer = document.createElement('DIV');
 		suggest = document.createElement('DIV');
 		backing = document.createElement('TEXTAREA');
-// 		tools = document.createElement('DIV');
+ 		tools = document.createElement('DIV');
 		cursor = document.createElement('DIV');
 	}
 
@@ -3693,26 +3693,26 @@ function editor(t) {
 	if (window.addEventListener) {
 		window.addEventListener('DOMMouseScroll',_mousescroll,false);
 	}
-// 	tools.className = 'editortools';
-// 	tools.style.position = 'absolute';
-// 	tools.style.right = '0px';
-// 	tools.style.bottom = '0px';
-// 	tools.innerHTML = ''
-// 		+ '<input tabindex="-1" type="button" value="B" style="font-weight:bold;" onClick="term_command(\':F!b\');" />'
-// 		+ '<input tabindex="-1" type="button" value="I" style="font-style:italic;" onClick="term_command(\':F!i\');" />'
-// 		+ '<input tabindex="-1" type="button" value="U" style="text-decoration:underline;" onClick="term_command(\':F!u\');" />'
-// 		+ '&nbsp;'
-// 		+ '<input tabindex="-1" type="button" value="Print" onClick="term_command(\':ha\');" />'
-// 		+ '&nbsp;'
-// 		+ '<input tabindex="-1" type="button" value="Abort" onClick="term_command(\':q?\');" />'
-// 		+ '<input tabindex="-1" type="button" value="Save and Close" onClick="term_command(\':wq\');" />'
+ 	tools.className = 'editortools';
+ 	tools.style.position = 'absolute';
+ 	tools.style.right = '0px';
+ 	tools.style.bottom = '0px';
+ 	tools.innerHTML = ''
+ 		+ '<input tabindex="-1" type="button" value="B" style="font-weight:bold;" onClick="term_command(\':F!b\');" />'
+ 		+ '<input tabindex="-1" type="button" value="I" style="font-style:italic;" onClick="term_command(\':F!i\');" />'
+ 		+ '<input tabindex="-1" type="button" value="U" style="text-decoration:underline;" onClick="term_command(\':F!u\');" />'
+ 		+ '&nbsp;'
+ 		+ '<input tabindex="-1" type="button" value="Print" onClick="term_command(\':ha\');" />'
+ 		+ '&nbsp;'
+ 		+ '<input tabindex="-1" type="button" value="Abort" onClick="term_command(\':q?\');" />'
+ 		+ '<input tabindex="-1" type="button" value="Save and Close" onClick="term_command(\':wq\');" />'
 	cursor.onclick = _pass_click;
 	cursor.ondblclick = _pass_dblclick;
 
 	document.body.appendChild(suggest);
 	document.body.appendChild(term);
 	document.body.appendChild(printer);
-// 	document.body.appendChild(tools);
+ 	document.body.appendChild(tools);
 	// firefox bug
 	if (once) document.body.appendChild(backing);
 	document.body.appendChild(cursor);
@@ -3732,7 +3732,7 @@ function editor(t) {
 	_zmp(term);
 	term._formelement = t;
 	document.body.style.overflow = 'hidden';
-// 	tools.style.display = 'block';
+ 	tools.style.display = 'block';
 
 	_cbd('select', _cancel_ev);
 	_cbd('selectstart', _cancel_ev);
@@ -3800,8 +3800,8 @@ function editor(t) {
 	suggest._visible = false;
 	suggest.display = 'none';
 
-// 	tools.style.backgroundColor = palette[0];
-// 	_dfx(tools);
+ 	tools.style.backgroundColor = palette[0];
+ 	_dfx(tools);
 
 	// degrading...
 	file = new Array();
