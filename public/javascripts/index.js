@@ -1750,6 +1750,7 @@ function term_command(s) {
     read_res("/" + filename,
       function(data) {
         term_thaw(data);
+        term._formelement.value = term_freeze();
 				statustext = '"' + filename + '" opened.';
         term_redraw();
       },
