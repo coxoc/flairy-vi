@@ -1734,8 +1734,6 @@ function term_command(s) {
 					return;
 				}
 			} else if (term._formelement.value != zx) {
-        alert("zx: " + zx);
-        alert("formelement: " + term._formelement.value);
 				statustext = 'No write since last change (use ! to override)';
 				return;
 			}
@@ -1751,7 +1749,7 @@ function term_command(s) {
       function(data) {
         term_thaw(data);
         term._formelement.value = term_freeze();
-				statustext = '"' + filename + '" opened.';
+				statustext = '"/' + filename + '" opened.';
         term_redraw();
       },
       function(resp) {
@@ -1763,7 +1761,7 @@ function term_command(s) {
 //		term_thaw(term._formelement.value);
 	} else if (cmd == 'f') {
 		var zx = term_freeze();
-		statustext = '"/tmp/mess4XbCXM"';
+		statustext = '"/' + filename + '"';
 		if (term._formelement.value != zx) {
 			statustext += ' [Modified]';
 		}
