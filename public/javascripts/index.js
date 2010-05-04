@@ -1748,7 +1748,7 @@ function term_command(s) {
     read_res("/" + filename,
       function(data) {
         term_thaw(data);
-				statustext = filename + ' Opened!';
+				statustext = '"' + filename + '" opened';
         term_redraw();
       },
       function(resp) {
