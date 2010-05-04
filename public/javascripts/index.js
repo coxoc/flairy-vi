@@ -1734,6 +1734,8 @@ function term_command(s) {
 					return;
 				}
 			} else if (term._formelement.value != zx) {
+        alert("zx: " + zx);
+        alert("formelement: " + term._formelement.value);
 				statustext = 'No write since last change (use ! to override)';
 				return;
 			}
