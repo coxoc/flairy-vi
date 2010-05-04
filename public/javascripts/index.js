@@ -82,6 +82,7 @@ var file = new Array();
 var tags = new Array();
 var palette;
 var cursor;
+var filename = "vi_text";
 
 var yank_buffer = undefined;
 
@@ -1705,15 +1706,14 @@ function term_command(s) {
 		if (term._formelement) term._formelement.value=zx;
     //Flairy APIで書き込み
     var arg = s.split(" ");
-    var file_name = "vi_text";
     for (k = 1; k < arg.length; k++) {
       if (arg[k] != "") {
-        file_name = arg[k];
+        filename = arg[k];
         break;
       }
     }
-    write_res('/'+file_name, zx, function() {}, "text/plain");
-		statustext = '"/' + flie_name + '" ' + file.length + 'L, '
+    write_res('/'+filename, zx, function() {}, "text/plain");
+		statustext = '"/' + filename + '" ' + file.length + 'L, '
 				+ zx.length + 'C written';
 
 	} else if (!emacsen && s.substr(i,(s.length-i)) == 'emacs') {
@@ -1738,7 +1738,24 @@ function term_command(s) {
 				return;
 			}
 		}
-		term_thaw(term._formelement.value);
+    var arg = s.split(" ");
+    for (k = 1; k < arg.length; k++) {
+      if (arg[k] != "") {
+        filename = arg[k];
+        break;
+      }
+    }
+    read_res("/" + filename,
+      function(data) {
+        term_thaw(data);
+      },
+      function(resp) {
+        var msg = Flairy.Res.Message[resp.status];
+        if (!msg) { msg = "原因は不明です。"; }
+        Ext.Msg.alert("失敗", msg);
+      }
+    );
+//		term_thaw(term._formelement.value);
 	} else if (cmd == 'f') {
 		var zx = term_freeze();
 		statustext = '"/tmp/mess4XbCXM"';
