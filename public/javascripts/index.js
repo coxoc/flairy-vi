@@ -1750,7 +1750,7 @@ function term_command(s) {
         term_thaw(data);
         term._formelement.value = term_freeze();
 				statustext = '"/' + filename + '" opened.';
-        app.setTitle(decodeURIComponent(app.title+": /"+filename);
+        app.setTitle(decodeURIComponent(app.title+": /"+filename));
         term_redraw();
       },
       function(resp) {
