@@ -1,3 +1,24 @@
+function read_res(uri, callback, failback) {
+  Flairy.Ajax.get("/~~flairy~~/res/" + uri, {
+    success: function(resp, opt) {
+      if (uri.match(/^\//)) {
+        var u = "frs://" + uri;
+      } else {
+        u = "frs:///" + uri;
+      }
+      (new Flairy.Msg.Useres(u, Flairy.Kernel.pid)).postToKernel();
+
+      FlairyVi.currentDocType = resp.getResponseHeader("Content-Type");
+      callback(resp.responseText);
+    },
+    failure: function(resp, opt) {
+      failback(resp);
+    },
+    disableCaching: true
+  });
+}
+
+
 function write_res(uri, data, suc, mime) {
 
 	if(!suc) { suc = function(){}; }
