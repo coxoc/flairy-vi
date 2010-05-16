@@ -18,11 +18,7 @@ Flairy.require([
             "終了確認",
             "変更が保存されていません。終了しますか？",
             function(btn) {
-              if (btn === 'yes') {
-					      (new Flairy.Msg.Kill(Flairy.Kernel.pid)).post();
-              } else {
-					      (new Flairy.Msg.Survive("ユーザーによる判断").post();
-              }
+					    (new Flairy.Msg.Kill(Flairy.Kernel.pid)).post();
             },
             this
           );
