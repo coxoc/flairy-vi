@@ -3680,6 +3680,7 @@ function editor(t) {
 	printer.className = 'print';
 	cursor.className = 'editorcursor';
 	term.className = 'editor';
+  term.tabIndex = -1;
 
 	suggest.style.position = 'absolute';
 	suggest.style.display = 'none';
