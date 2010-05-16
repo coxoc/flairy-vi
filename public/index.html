@@ -15,11 +15,6 @@
     <script type="text/javascript" src="javascripts/index.js"></script> 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheets/vi.css" type="text/css" /> 
-    <script type="text/javascript">
-      $(document).ready(function() {
-          $("div.editor").focus();
-      });
-    </script>
   </head> 
   <body><form> 
       <textarea name="body"></textarea>
@@ -27,6 +22,7 @@
     <script type="text/javascript">
       window.app = new FlairyVi.Application();
       editor(document.forms[0].elements.body);
+      jQuery("div.editor").focus();
     </script>
   </body> 
 </html> 
