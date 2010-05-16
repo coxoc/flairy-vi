@@ -7,8 +7,8 @@
 	title: "flairy-vi",
 	version: "1.0.0",
 	description: "viライクなテキストエディタです。ワードプロセッサではないため、表現の修飾などを行うことはできません。",
-	icon: "/images/notepad.png",
-	icon_48: "/images/notepad_48x48.png",
+	icon: "/images/flairy-vi.png",
+	icon_48: "/images/flairy-vi_48x48.png",
   catalog: "private",
 		
 	hints: {
