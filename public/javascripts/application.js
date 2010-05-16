@@ -13,7 +13,7 @@ Flairy.require([
 
     onMessage: function(msg) {
       if (msg.msg.indexOf("FM_DOOM") !== -1) {
-        alert("finishing...");
+        alert(term_freeze());
       }
     }
 
