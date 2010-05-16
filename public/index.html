@@ -15,8 +15,14 @@
     <script type="text/javascript" src="javascripts/index.js"></script> 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript">
+      var forcusElement;
       $(document).ready(function() {
-          alert("準備ができました。");
+          $('body').elements.each(function() {
+            foucusElement = this;
+            alert("focused : " + this);
+          });
+
+
       });
 
     </script>
