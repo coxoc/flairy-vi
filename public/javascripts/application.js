@@ -13,7 +13,9 @@ Flairy.require([
 
     onMessage: function(msg) {
       if (msg.msg.indexOf("FM_DOOM") !== -1) {
-        alert(term_freeze());
+        if (term_freeze() != term._formelement.value) {
+          alert("change!!");
+        }
       }
     }
 
