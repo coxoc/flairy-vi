@@ -1754,9 +1754,17 @@ function term_command(s) {
         term_redraw();
       },
       function(resp) {
-        var msg = Flairy.Res.Message[resp.status];
-        if (!msg) { msg = "原因は不明です。"; }
-        Ext.Msg.alert("失敗", msg);
+        if (resp.status == 404) {
+          term_thaw("");
+          term._formelement.value = term_freeze();
+          statustext = '"/' + filename + '" opened.';
+          app.setTitle(decodeURIComponent(app.title+": /"+filename));
+          term_redraw();
+        } else {
+          var msg = Flairy.Res.Message[resp.status];
+          if (!msg) { msg = "原因は不明です。"; }
+          Ext.Msg.alert("失敗", msg);
+        }
       }
     );
 //		term_thaw(term._formelement.value);
