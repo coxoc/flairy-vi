@@ -15,6 +15,8 @@ Flairy.require([
       if (msg.msg.indexOf("FM_DOOM") !== -1) {
         if (term_freeze() != term._formelement.value) {
           alert("change!!");
+        } else {
+					(new Flairy.Msg.Kill(Flairy.Kernel.pid)).post(this.onShutdown);
         }
       }
     }
