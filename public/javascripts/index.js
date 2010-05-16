@@ -3836,7 +3836,5 @@ function editor(t) {
 	_cbw('resize', term_resize);
 	_cbw('beforeprint', _term_update_printer);
 	_update_backing();
-	_update_backing();
-	_update_backing();
 }
 

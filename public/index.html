@@ -14,18 +14,6 @@
     <script type="text/javascript" src="javascripts/flairy_util.js"></script> 
     <script type="text/javascript" src="javascripts/index.js"></script> 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script type="text/javascript">
-      var forcusElement;
-      $(document).ready(function() {
-          $('body').elements.each(function() {
-            foucusElement = this;
-            alert("focused : " + this);
-          });
-
-
-      });
-
-    </script>
     <link rel="stylesheet" href="stylesheets/vi.css" type="text/css" /> 
   </head> 
   <body><form> 
@@ -34,10 +22,8 @@
     <script type="text/javascript">
       window.app = new FlairyVi.Application();
       editor(document.forms[0].elements.body);
-//      document.forms[0].elements.body.focus();
-//      jQuery("div.editor").focus();
-//      _update_backing();
-
+	if (document.body.focus) document.body.focus();
+	if (document.focus) document.focus();
     </script>
   </body> 
 </html> 
